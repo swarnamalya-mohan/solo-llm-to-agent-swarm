@@ -1,0 +1,96 @@
+[
+  {
+    "id": "FX-10482",
+    "expected_arrival": "09:00",
+    "actual_arrival": "23:00",
+    "events": [
+      {
+        "time": "02:00",
+        "event": "Departed origin facility"
+      },
+      {
+        "time": "04:00",
+        "event": "Arrived sorting hub"
+      },
+      {
+        "time": "03:30",
+        "event": "Departed sorting hub"
+      },
+      {
+        "time": "08:00",
+        "event": "Routing exception"
+      },
+      {
+        "time": "10:00",
+        "event": "Severe weather advisory issued"
+      }
+    ],
+    "weather_report": "Weather advisory began at 10:00; no confirmed weather disruption earlier.",
+    "routing_report": "Routing exception at 08:00; underlying reason unknown.",
+    "ground_truth": {
+      "timeline_contradiction": true,
+      "weather_cause_confirmed": false,
+      "root_cause_known": false
+    }
+  },
+  {
+    "id": "FX-10483",
+    "expected_arrival": "12:00",
+    "actual_arrival": "14:00",
+    "events": [
+      {
+        "time": "05:00",
+        "event": "Departed origin"
+      },
+      {
+        "time": "09:00",
+        "event": "Arrived sorting hub"
+      },
+      {
+        "time": "11:00",
+        "event": "Departed sorting hub"
+      },
+      {
+        "time": "14:00",
+        "event": "Delivered"
+      }
+    ],
+    "weather_report": "No weather advisories.",
+    "routing_report": "Normal route with no known exception.",
+    "ground_truth": {
+      "timeline_contradiction": false,
+      "weather_cause_confirmed": false,
+      "root_cause_known": false
+    }
+  },
+  {
+    "id": "FX-10484",
+    "expected_arrival": "15:00",
+    "actual_arrival": "22:00",
+    "events": [
+      {
+        "time": "07:00",
+        "event": "Departed origin"
+      },
+      {
+        "time": "11:00",
+        "event": "Arrived hub"
+      },
+      {
+        "time": "16:00",
+        "event": "Departed hub"
+      },
+      {
+        "time": "22:00",
+        "event": "Delivered"
+      }
+    ],
+    "weather_report": "Heavy storms documented at hub between 11:00 and 16:00, but no independent confirmation of causation.",
+    "routing_report": "No reroute documented.",
+    "ground_truth": {
+      "timeline_contradiction": false,
+      "weather_cause_confirmed": false,
+      "root_cause_known": false
+    }
+  }
+]
